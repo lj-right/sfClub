@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="LanguageInjectionConfiguration">
-    <injection language="MySQL" injector-id="xml">
-      <display-name>insert</display-name>
-      <place>xmlTag().withLocalName(string().equalTo(&quot;insert&quot;)).withNamespace(string().equalTo(&quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;))</place>
-    </injection>
-  </component>
-</project>

@@ -10,7 +10,7 @@ import java.util.List;
  * 题目DTO
  */
 @Data
-public class SubjectInfoDTO  extends PageInfo implements Serializable {
+public class SubjectInfoDTO extends PageInfo implements Serializable {
     private static final long serialVersionUID = -92805262683575195L;
     /**
      * 主键
@@ -67,6 +67,43 @@ public class SubjectInfoDTO  extends PageInfo implements Serializable {
     private Long categoryId;
 
     private Long labelId;
+
+    private String keyWord;
+
+    /**
+     * 创建人昵称
+     */
+    private String createUser;
+
+    /**
+     * 创建人头像
+     */
+    private String createUserAvatar;
+
+    /**
+     * 题目数量
+     */
+    private Integer subjectCount;
+
+    /**
+     * 是否被当前用户点赞
+     */
+    private Boolean liked;
+
+    /**
+     * 当前题目点赞的数量
+     */
+    private Integer likedCount;
+
+    /**
+     * 下一题
+     */
+    private Long nextSubjectId;
+
+    /**
+     * 上一题
+     */
+    private Long lastSubjectId;
 
 }
 

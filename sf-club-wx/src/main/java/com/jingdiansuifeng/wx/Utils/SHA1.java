@@ -7,7 +7,6 @@ import java.util.Arrays;
 
 /**
  * sha1生成签名工具
- *
  */
 @Slf4j
 public class SHA1 {

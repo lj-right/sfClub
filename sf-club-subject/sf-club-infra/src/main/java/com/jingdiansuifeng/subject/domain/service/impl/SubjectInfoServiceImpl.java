@@ -1,7 +1,7 @@
 package com.jingdiansuifeng.subject.domain.service.impl;
 
 import com.jingdiansuifeng.subject.domain.entity.SubjectInfo;
-import com.jingdiansuifeng.subject.domain.mapper.SubjectInfoDao;
+import com.jingdiansuifeng.subject.infra.basic.mapper.SubjectInfoDao;
 import com.jingdiansuifeng.subject.domain.service.SubjectInfoService;
 import org.springframework.stereotype.Service;
 
@@ -74,4 +74,15 @@ public class SubjectInfoServiceImpl implements SubjectInfoService {
         return this.subjectInfoDao.queryPage(subjectInfo, categoryId, labelId, start, pageSize);
     }
 
+    @Override
+    public List<SubjectInfo> getContributeCount() {
+            return this.subjectInfoDao.getContributeCount();
+
+    }
+
+    @Override
+    public Long querySubjectIdCursor(Long categoryId, Long labelId, Long subjectId, int cursor) {
+
+        return this.subjectInfoDao.querySubjectIdCursor(categoryId, labelId, subjectId, cursor);
+    }
 }

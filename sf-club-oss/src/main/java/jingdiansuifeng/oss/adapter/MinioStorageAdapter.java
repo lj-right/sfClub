@@ -9,6 +9,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
 import java.io.BufferedInputStream;
+import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.util.List;
 
@@ -35,9 +36,9 @@ public class MinioStorageAdapter implements StorageAdapter {
         try {
             minioUtil.createBucket(bucket);
             if (objectName != null) {
-                minioUtil.uploadFile(new BufferedInputStream(uploadFile.getInputStream()), bucket, objectName + "/" + uploadFile.getOriginalFilename());
+                minioUtil.uploadFile(new ByteArrayInputStream(uploadFile.getBytes()), bucket, objectName + "/" + uploadFile.getOriginalFilename());
             } else {
-                minioUtil.uploadFile(new BufferedInputStream(uploadFile.getInputStream()), bucket, uploadFile.getOriginalFilename());
+                minioUtil.uploadFile(new ByteArrayInputStream(uploadFile.getBytes()), bucket, uploadFile.getOriginalFilename());
             }
         } catch (Exception e) {
             e.printStackTrace();

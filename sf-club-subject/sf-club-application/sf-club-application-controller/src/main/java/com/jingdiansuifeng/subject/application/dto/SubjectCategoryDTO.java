@@ -8,8 +8,6 @@ import java.util.List;
 /**
  * 题目分类表(SubjectCategory)实体类
  *
- * @author makejava
- * @since 2025-03-31 13:55:37
  */
 @Data
 public class SubjectCategoryDTO implements Serializable {

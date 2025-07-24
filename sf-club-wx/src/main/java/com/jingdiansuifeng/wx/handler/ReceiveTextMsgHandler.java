@@ -1,7 +1,6 @@
 package com.jingdiansuifeng.wx.handler;
 import com.jingdiansuifeng.wx.redis.RedisUtil;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.logging.log4j.util.Strings;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;

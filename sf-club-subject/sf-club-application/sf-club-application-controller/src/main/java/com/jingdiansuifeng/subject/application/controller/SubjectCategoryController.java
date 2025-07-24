@@ -12,7 +12,6 @@ import com.jingdiansuifeng.subject.domain.service.SubjectCategoryDomainService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.bind.annotation.*;
-
 import javax.annotation.Resource;
 import java.util.LinkedList;
 import java.util.List;
@@ -69,7 +68,7 @@ public class SubjectCategoryController {
         }
     }
 
-    @GetMapping("/queryCategoryByPrimary")
+    @PostMapping("/queryCategoryByPrimary")
     public Result<List<SubjectCategoryDTO>> queryCategoryByPrimary(@RequestBody  SubjectCategoryDTO subjectCategoryDTO) {
         try {
             if (log.isInfoEnabled()) {

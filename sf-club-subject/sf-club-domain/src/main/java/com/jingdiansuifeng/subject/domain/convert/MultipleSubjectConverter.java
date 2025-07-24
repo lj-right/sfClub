@@ -2,7 +2,6 @@ package com.jingdiansuifeng.subject.domain.convert;
 
 import com.jingdiansuifeng.subject.domain.entity.SubjectAnswerBO;
 import com.jingdiansuifeng.subject.domain.entity.SubjectMultiple;
-import com.jingdiansuifeng.subject.domain.entity.SubjectRadio;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 

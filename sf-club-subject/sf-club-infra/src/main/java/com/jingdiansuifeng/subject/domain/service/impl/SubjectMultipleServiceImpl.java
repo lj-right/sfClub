@@ -1,7 +1,7 @@
 package com.jingdiansuifeng.subject.domain.service.impl;
 
 import com.jingdiansuifeng.subject.domain.entity.SubjectMultiple;
-import com.jingdiansuifeng.subject.domain.mapper.SubjectMultipleDao;
+import com.jingdiansuifeng.subject.infra.basic.mapper.SubjectMultipleDao;
 import com.jingdiansuifeng.subject.domain.service.SubjectMultipleService;
 import org.springframework.stereotype.Service;
 

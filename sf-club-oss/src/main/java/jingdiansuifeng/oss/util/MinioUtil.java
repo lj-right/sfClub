@@ -8,6 +8,7 @@ import jingdiansuifeng.oss.entity.FileInfo;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
+import java.io.BufferedInputStream;
 import java.io.InputStream;
 import java.util.LinkedList;
 import java.util.List;
@@ -36,8 +37,10 @@ public class MinioUtil {
      * 上传文件
      */
     public void uploadFile(InputStream inputStream, String bucket, String objectName) throws Exception {
+        // 确保 InputStream 支持 mark/reset，并提供足够的缓冲区大小
+        BufferedInputStream bufferedInputStream = new BufferedInputStream(inputStream, 1024*1024);
         minioClient.putObject(PutObjectArgs.builder().bucket(bucket).object(objectName)
-                .stream(inputStream, -1, Integer.MAX_VALUE).build());
+                .stream(bufferedInputStream, -1, Integer.MAX_VALUE).build());
     }
 
     /**

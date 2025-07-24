@@ -1,6 +1,5 @@
 package com.jingdiansuifeng.subject.domain.entity;
 
-import com.jingdiansuifeng.subject.common.entity.PageInfo;
 import lombok.Data;
 
 import java.io.Serializable;

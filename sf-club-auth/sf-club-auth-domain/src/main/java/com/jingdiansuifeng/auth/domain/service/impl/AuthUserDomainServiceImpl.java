@@ -74,10 +74,11 @@ public class AuthUserDomainServiceImpl implements AuthUserDomainService {
             authUser.setPassword(SaSecureUtil.md5BySalt(authUser.getPassword(), salt));
         }
         if (StringUtils.isBlank(authUser.getAvatar())) {
-            authUser.setAvatar("http://117.72.10.84:9000/user/icon/微信图片_20231203153718(1).png");
+//            todo
+            authUser.setAvatar("http://#:9000/user/icon/微信图片_20231203153718(1).png");
         }
         if (StringUtils.isBlank(authUser.getNickName())) {
-            authUser.setNickName("minisuifeng");
+            authUser.setNickName("随风的粉丝");
         }
         authUser.setStatus(AuthUserStatusEnum.OPEN.getCode());
         authUser.setIsDeleted(IsDeletedFlagEnum.UN_DELETED.getCode());
@@ -86,6 +87,7 @@ public class AuthUserDomainServiceImpl implements AuthUserDomainService {
         //建立一个初步的角色的关联
         AuthRole authRole = new AuthRole();
         authRole.setRoleKey(AuthConstant.NORMAL_USER);
+//        authRole.setRoleKey(AuthConstant.SUPER_USER);
         AuthRole roleResult = authRoleService.queryByCondition(authRole);
         Long roleId = roleResult.getId();
         Long userId = authUser.getId();

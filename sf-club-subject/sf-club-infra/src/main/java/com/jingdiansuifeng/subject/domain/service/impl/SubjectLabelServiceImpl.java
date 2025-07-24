@@ -1,7 +1,7 @@
 package com.jingdiansuifeng.subject.domain.service.impl;
 
 import com.jingdiansuifeng.subject.domain.entity.SubjectLabel;
-import com.jingdiansuifeng.subject.domain.mapper.SubjectLabelDao;
+import com.jingdiansuifeng.subject.infra.basic.mapper.SubjectLabelDao;
 import com.jingdiansuifeng.subject.domain.service.SubjectLabelService;
 import org.springframework.stereotype.Service;
 

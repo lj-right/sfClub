@@ -12,7 +12,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @ComponentScan("com.jingdiansuifeng")
-@MapperScan("com.jingdiansuifeng.**.mapper")
+@MapperScan("com.jingdiansuifeng.auth.**.mapper")
 public class AuthApplication {
     public static void main(String[] args) {
         SpringApplication.run(AuthApplication.class);

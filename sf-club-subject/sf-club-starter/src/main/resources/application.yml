@@ -1,9 +1,9 @@
 server:
-  port: 3000
+  port: 3010
 spring:
   datasource:
     username: root
-    password: SCZOTUo/gq6vVCjYUeRBaiuyPnEQNS7UG9AX6cVCbX1L9SGm1EhpQTkfKBAQ8hmkVw0le7ksC38d4b1mbfB7sQ==
+    password: OR/zYmlbZQcyHfTeBgDSWjUy/o7hD8TB+7lXkYoe/i8km4DwX4PgWCIelqSTflVGyqRmbqBJlDYYHleyKJNPdg==
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://ip:3306/sf-club?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8&useSSL=true
     type: com.alibaba.druid.pool.DruidDataSource
@@ -17,7 +17,7 @@ spring:
         enabled: true
         url-pattern: /druid/*
         login-username: admin
-        login-password: pwd
+        login-password: 123456
       filter:
         stat:
           enabled: true
@@ -27,10 +27,54 @@ spring:
           enabled: true
         config:
           enabled: true
+  # redis配置
+  redis:
+    # Redis数据库索引（默认为0）
+    database: 1
+    # Redis服务器地址
+    host: ip
+    # Redis服务器连接端口
+    port: 6379
+    # Redis服务器连接密码（默认为空）
+    password: #
+    # 连接超时时间
+    timeout: 3s
+    lettuce:
+      pool:
+        # 连接池最大连接数
+        max-active: 200
+        # 连接池最大阻塞等待时间（使用负值表示没有限制）
+        max-wait: -1ms
+        # 连接池中的最大空闲连接
+        max-idle: 100
+        # 连接池中的最小空闲连接
+        min-idle: 0
 
-publicKey: MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAJPPaeB3f7uSvCwFWPJwfBjQv8B+V2/6yKUd8hh6iNR1v3aBaMQYA3cItN09QaC3be6Y9jZDO0R8wmt9iTYYQqECAwEAAQ==
+publicKey: MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAIU0/QL7nBX9N75yYjjQnTHOEJYf6JmnosB5Zp0fCVB/Ngf2Nx6R8Tzo7L21UIFqUwWAe2lGBNn/T9g5mfSMxKsCAwEAAQ==
 logging:
   config: classpath:log4j2-spring.xml
-#mybatis-plus:
-#  configuration:
-#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+es:
+  cluster:
+    esConfigs[0]:
+      name: 5ad1a12387b1
+      nodes: ip:9200
+xxl:
+  job:
+    admin:
+      addresses: http://ip:8088/xxl-job-admin
+      accessToken: default_token
+      timeout: 3
+    executor:
+      appname: sf-club-subject
+      address:
+      ip: ip
+      port: 9999
+      logpath: /data/applogs/xxl-job/jobhandler
+      logretentiondays: 30
+rocketmq:
+  name-server: ip:9876
+  producer:
+    group: test-group
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

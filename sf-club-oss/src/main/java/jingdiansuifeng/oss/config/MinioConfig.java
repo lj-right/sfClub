@@ -11,7 +11,6 @@ import org.springframework.context.annotation.Configuration;
  * minio配置管理
  */
 @Configuration
-@Data
 public class MinioConfig {
     /**
      * minioUrl

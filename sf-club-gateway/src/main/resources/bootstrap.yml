@@ -6,10 +6,11 @@ spring:
   cloud:
     nacos:
       config:
-        server-addr: ip:port
+        server-addr: ip:8848 # Nacos配置中心的地址，包括IP和端口。
         prefix: ${spring.application.name}
         group: DEFAULT_GROUP
+        namespace:
         file-extension: yaml
       discovery:
         enabled: true
-        server-addr: ip:port
+        server-addr: ip:8848 # Nacos服务发现的地址，包括IP和端口。

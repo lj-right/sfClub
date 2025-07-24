@@ -24,9 +24,9 @@ public class StpInterfaceImpl implements StpInterface {
     @Resource
     private RedisUtil redisUtil;
 
-    private String authPermissionPrefix = "auth:permission:";
+    private String authPermissionPrefix = "auth.permission";
 
-    private String authRolePrefix = "auth:role:";
+    private String authRolePrefix = "auth.role";
 
     @Override
     public List<String> getPermissionList(Object loginId, String loginType) {
@@ -52,7 +52,8 @@ public class StpInterfaceImpl implements StpInterface {
             }.getType());
             authList = roleList.stream().map(AuthRole::getRoleKey).collect(Collectors.toList());
         }else if(authPermissionPrefix.equals(prefix)){
-            List<AuthPermission> permissionList = new Gson().fromJson(authValue, new TypeToken<List<AuthPermission>>() {
+            List<AuthPermission> permissionList = new Gson()
+                    .fromJson(authValue, new TypeToken<List<AuthPermission>>() {
             }.getType());
             authList = permissionList.stream().map(AuthPermission::getPermissionKey).collect(Collectors.toList());
         }

@@ -2,7 +2,7 @@ package com.jingdiansuifeng.subject.domain.service.impl;
 
 import com.jingdiansuifeng.subject.domain.service.SubjectMappingService;
 import com.jingdiansuifeng.subject.domain.entity.SubjectMapping;
-import com.jingdiansuifeng.subject.domain.mapper.SubjectMappingDao;
+import com.jingdiansuifeng.subject.infra.basic.mapper.SubjectMappingDao;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

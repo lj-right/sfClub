@@ -2,6 +2,7 @@ package com.jingdiansuifeng.subject.common.entity;
 
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.Collections;
 import java.util.List;
 
@@ -9,7 +10,7 @@ import java.util.List;
  * 分页返回实体
  */
 @Data
-public class PageResult<T> {
+public class PageResult<T>{
 
     private Integer pageNo = 1;
 

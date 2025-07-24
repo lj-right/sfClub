@@ -1,5 +1,6 @@
 package com.jingdiansuifeng.auth.entity;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import lombok.Data;
 
 import java.io.Serializable;

@@ -6,10 +6,10 @@ spring:
   cloud:
     nacos:
       config:
-        server-addr: ip
+        server-addr: ip:8848
         prefix: ${spring.application.name}
         group: DEFAULT_GROUP
         file-extension: yaml
       discovery:
         enabled: true
-        server-addr: ip:port
+        server-addr: ip:8848

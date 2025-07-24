@@ -10,10 +10,7 @@ import com.jingdiansuifeng.auth.domain.service.AuthPermissionDomainService;
 import com.jingdiansuifeng.auth.entity.Result;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 
@@ -86,7 +83,7 @@ public class PermissionController {
     /**
      * 查询用户权限
      */
-    @PostMapping("getPermission")
+    @GetMapping("getPermission")
     public Result<Boolean> getPermission(String userName) {
         try {
             log.info("PermissionController.getPermission.userName:{}",userName);

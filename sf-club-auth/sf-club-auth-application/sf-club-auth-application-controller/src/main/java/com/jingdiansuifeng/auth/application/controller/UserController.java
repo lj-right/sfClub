@@ -155,7 +155,20 @@ public class UserController {
         }
     }
 
-    // 测试登录  ---- http://localhost:8081/acc/doLogin?name=zhang&pwd=123456
+    // 测试登录，浏览器访问： http://localhost:8081/user/doLogin?username=zhang&password=123456
+//    @RequestMapping("doLogin")
+//    public SaResult doLogin(String username, String password) {
+//        // 此处仅作模拟示例，真实项目需要从数据库中查询数据进行比对
+//        if("zhang".equals(username) && "123456".equals(password)) {
+//            StpUtil.login("随风");
+//            SaTokenInfo tokenInfo = StpUtil.getTokenInfo();
+//            return SaResult.data(tokenInfo);
+//        }
+//        return SaResult.error("登录失败");
+//    }
+
+
+    // 测试登录  ---- http://localhost:3012/acc/doLogin?name=zhang&pwd=123456
     @RequestMapping("doLogin")
     public Result<SaResult> doLogin(@RequestParam("validCode") String validCode) {
         try {
@@ -165,7 +178,6 @@ public class UserController {
             log.error("UserController.doLogin.error:{}", e.getMessage(), e);
             return Result.fail("用户登录失败");
         }
-
     }
 
     // 查询登录状态，浏览器访问： http://localhost:8081/user/isLogin
