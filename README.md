@@ -1,53 +1,54 @@
 # sf-club
 
 #### 介绍
-sf-club的刷题学习交流项目
+这是一款专为程序员设计的技术交流社区，采用主流微服务框架+C端技术栈做为技术架构。旨在帮助程序员消
+除技术信息差，进行平台统一化，程序员可以在平台，完善自身知识，进行针对性面试题库练习，模拟面试，
+来提升程序员面试能力。
 
-#### 软件架构
-软件架构说明
+#### 项目模块简介
+├── sf-club-auth            	// 鉴权微服务 [3011]
+├──    └── sf-club-auth-api            // 对外接口层
+├── 	   └── api
+├── 	   └── req
+├── 	   └── resp
+├──    └── sf-club-auth-common
+├── 	   └── config
+├── 	   └── enum
+├── 	   └── util
+├──    └── sf-club-auth-application     // 应用层
+├── 	   └── sf-club-auth-application-controller
+├── 	       └── controller
+├── 	       └── convert  // DTO转BO
+├── 	       └── dto
+├── 	       └── config
+├── 	       └── intercepter
+├── 	   └── sf-club-auth-application-job
+├── 	   └── sf-club-auth-application-mq
+├──    └── sf-club-auth-domain       // 领域层
+├── 	   └── service               // 领域能力
+├── 	   └── bo       
+├── 	   └── convert      // BO转PO
+├── 	   └── util
+├──    └── sf-club-auth-infra       // 基础设施层
+├── 	   └── basic
+├── 	       └── entity  
+├── 	       └── mapper  
+├── 	       └── service  
+├── 	       └── util  
+├── 	   └── rpc  
+├── 	   └── mq
+├──    └── sf-club-auth-starter    // 启动层，无关于任何业务，纯启动
+        
+├── sf-club-gateway        // 网关微服务 [5000]	
 
-###
-逻辑流程：
-infra  -->  domain  -->  application-controller
-javaBean  <--> BO  <--> DTO 
+├── sf-club-subject        // 题目微服务 [3010]
 
-xml(infra) -> Dao(infra) -> ServiceImpl(infra)  
-        |
-        V
-        Service(infra) -> ServiceImpl(domian) -> Service(domain)
-                                                    |
-                                                    V
-                                                    Controller(application-controller) -> end
+├── sf-club-circle         // 圈子微服务 [3014]
 
+├── sf-club-interview      // 面试微服务 [3015]
 
+├── sf-club-practice       // 练题微服务 [3013]
 
+├── sf-club-wechat         // 微信微服务 [3012]
 
-
-#### 安装教程
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 使用说明
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 参与贡献
-
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
-
-
-#### 特技
-
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+├── sf-club-oss            // oss微服务  [4000]
